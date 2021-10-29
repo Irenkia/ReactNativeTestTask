@@ -1,12 +1,12 @@
 import React from "react";
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 
 const DisplayPosts = ({ posts }) => {
     return (
         <View>
-            <ScrollView>
+            <TouchableOpacity onPress={() => alert(posts.body)}>
                 <Text>{posts.name}</Text>
-            </ScrollView>
+            </TouchableOpacity>
         </View>
     )
 }
