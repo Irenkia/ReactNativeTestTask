@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { View, FlatList, TextInput, StyleSheet } from "react-native";
-import { Api } from "../api/Api";
-import DisplayPosts from "./DisplayPosts";
+import React, { Component } from 'react';
+import { View, FlatList, TextInput, StyleSheet } from 'react-native';
+import { Api } from '../api/Api';
+import DisplayPosts from './DisplayPosts';
 
 class HomeScreen extends Component {
 
@@ -10,8 +10,9 @@ class HomeScreen extends Component {
         this.state = {
             posts: [],
             isLoading: true,
-            searchComment: ""
-        }
+            searchComment: ''
+        };
+        this.handlerInput = this.handlerInput.bind(this);
     }
 
     componentDidMount() {
@@ -19,12 +20,12 @@ class HomeScreen extends Component {
             .then(response => response.json())
             .then(json => this.setState({ posts: json }))
             .catch(err => this.setState({ posts: err }));
-        this.setState({ isLoading: false })
+        this.setState({ isLoading: false });
     }
 
     handlerInput = (event) => {
-        this.setState({ searchComment: event })
-    }
+        this.setState({ searchComment: event });
+    };
 
     render() {
         return (
@@ -41,11 +42,11 @@ class HomeScreen extends Component {
                     })}
                     keyExtractor={item => item.id.toString()}
                     renderItem={({ item }) => {
-                        return <DisplayPosts posts={item} />
+                        return <DisplayPosts posts={item} />;
                     }}
                 />
             </View>
-        )
+        );
     }
 }
 const styles = StyleSheet.create({
@@ -53,6 +54,6 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         fontSize: 17,
     }
-})
+});
 
 export default HomeScreen;
