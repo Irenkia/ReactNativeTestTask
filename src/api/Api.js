@@ -1,1 +1,1 @@
-export const Api = 'https://jsonplaceholder.typicode.com/comments';
+export const Api = 'https://jsonplaceholder.typicode.com/comments/?_limit=30&_page=';

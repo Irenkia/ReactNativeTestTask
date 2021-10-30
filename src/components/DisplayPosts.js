@@ -2,18 +2,18 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 
-const DisplayPosts = ({ posts }) => {
+const DisplayPosts = ({ comments }) => {
     return (
         <View>
-            <TouchableOpacity onPress={() => alert(posts.body)} >
-                <Text>{posts.id + ') ' + posts.name}</Text>
+            <TouchableOpacity onPress={() => alert(comments.id + ') ' + comments.body)} >
+                <Text>{comments.id + ') ' + comments.name}</Text>
             </TouchableOpacity>
         </View>
     );
 };
 
 DisplayPosts.propTypes = {
-    posts: PropTypes.object.isRequired
+    comments: PropTypes.object.isRequired
 };
 
 export default DisplayPosts;
