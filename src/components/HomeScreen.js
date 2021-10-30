@@ -51,7 +51,7 @@ class HomeScreen extends Component {
             <View>
                 <TextInput
                     value={this.state.searchComment}
-                    style={styles.input} placeholder={'Search...'}
+                    style={styles.input} placeholder={'Search comments...'}
                     onChangeText={this.handlerInput} />
                 <FlatList
                     data={this.state.comments.filter(({ name }) => {
@@ -75,7 +75,8 @@ class HomeScreen extends Component {
 const styles = StyleSheet.create({
     input: {
         borderBottomWidth: 1,
-        fontSize: 17,
+        fontSize: 21,
+        margin: 5
     },
     indicator: {
         marginTop: 10,
